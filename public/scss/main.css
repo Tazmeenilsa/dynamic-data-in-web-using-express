@@ -1,11 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600&display=swap");
+
 html {
   font-size: 62.5%;
+  /* used for footer to stay at the bottom */
+  height: 100%;
 }
 
 body {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 300;
+  /* following properties used for footer to stay at the bottom */
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 a,
@@ -18,50 +25,64 @@ a:hover {
   line-height: 10rem;
   background-color: black;
 }
+
 .main_header .navbar-brand {
   color: #fff;
   -webkit-animation: listen 1s linear infinite;
-          animation: listen 1s linear infinite;
+  animation: listen 1s linear infinite;
   -webkit-animation-direction: alternate;
-          animation-direction: alternate;
+  animation-direction: alternate;
 }
+
 .main_header .navbar-brand .fas {
   font-size: 4rem;
 }
+
 @-webkit-keyframes listen {
   from {
     transform: rotate(5deg);
   }
+
   to {
     transform: rotate(-5deg);
   }
 }
+
 @keyframes listen {
   from {
     transform: rotate(5deg);
   }
+
   to {
     transform: rotate(-5deg);
   }
 }
+
 .main_header .navbar-brand:hover {
   filter: drop-shadow(0 1.5rem 1rem rgba(255, 255, 255, 0.5));
 }
+
 .main_header .navbar-nav {
   padding-left: 15rem;
 }
+
 .main_header .navbar-nav .nav-item .nav-link {
   font-size: 1.6rem;
   color: #fff;
   text-transform: uppercase;
   padding-right: 3rem;
 }
-.main_header .navbar-nav .nav-item:last-child > .nav-link {
+
+.main_header .navbar-nav .nav-item:last-child>.nav-link {
   padding-right: 0%;
 }
-.main_header .nav-item:hover > .nav-link, .main_header .navbar-brand:hover, .main_header .navbar-brand:hover > .fas {
+
+.main_header .nav-item:hover>.nav-link,
+.main_header .navbar-brand:hover,
+.main_header .navbar-brand:hover>.fas {
   color: #b71540;
 }
+
 .main_header .my-btn {
   padding: 0.8rem 3.2rem;
   background: #b71540;
@@ -77,15 +98,18 @@ a:hover {
   border-radius: 4.5rem;
   outline: none;
 }
+
 .main_header .my-btn:hover {
   background-color: #fff;
   box-shadow: 0rem 1.5rem 2rem rgba(255, 255, 157, 0.4);
   color: #0a183d;
   transform: translateY(-0.7rem);
 }
+
 .main_header .navbar-toggler-icon {
   background-color: white;
 }
+
 .main_header .navbar-toggler-icon:hover {
   background-color: #b71540;
 }
@@ -95,6 +119,7 @@ a:hover {
   height: 80vh;
   background-color: #0a183d;
 }
+
 .header-hero_text {
   height: 80vh;
   display: flex;
@@ -102,6 +127,7 @@ a:hover {
   align-items: flex-start;
   flex-direction: column;
 }
+
 .header-hero_text h2 {
   color: #fff;
   font-size: 7rem;
@@ -109,21 +135,25 @@ a:hover {
   line-height: 150%;
   font-weight: 600;
 }
+
 .header-hero_text h2 span {
   color: #b71540;
   text-transform: capitalize;
 }
+
 .header-hero_text p {
   font-size: 1.8rem;
   color: #fff;
   margin-bottom: 5rem;
 }
+
 .header-hero_text .header-text_btn {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
+
 .header-hero_text .header-text_btn a {
   padding: 0.8rem 3.2rem;
   background: #b71540;
@@ -139,22 +169,26 @@ a:hover {
   border-radius: 4.5rem;
   outline: none;
 }
+
 .header-hero_text .header-text_btn a:hover {
   background-color: #fff;
   box-shadow: 0rem 1.5rem 2rem rgba(255, 255, 157, 0.4);
   color: #0a183d;
   transform: translateY(-0.7rem);
 }
+
 .header-hero_text .header-text_btn #btn__2 {
   margin-left: 2rem;
   background: rgba(255, 255, 255, 0.5);
 }
+
 .header-hero_text .header-text_btn #btn__2:hover {
   background-color: #fff;
   box-shadow: 0rem 1.5rem 2rem rgba(255, 255, 157, 0.4);
   color: #0a183d;
   transform: translateY(-0.7rem);
 }
+
 .header-hero_img {
   display: flex;
   justify-content: center;
@@ -162,59 +196,90 @@ a:hover {
   flex-direction: column;
   height: 70vh;
   -webkit-animation: anime-hero 10s linear infinite alternate;
-          animation: anime-hero 10s linear infinite alternate;
+  animation: anime-hero 10s linear infinite alternate;
 }
+
 @-webkit-keyframes anime-hero {
   from {
     transform: scale(0.9);
   }
+
   to {
     transform: scale(1);
   }
 }
+
 @keyframes anime-hero {
   from {
     transform: scale(0.9);
   }
+
   to {
     transform: scale(1);
   }
 }
+
 .header-hero_img img {
   filter: drop-shadow(0 1.5rem 1rem rgba(0, 0, 0, 0.8));
 }
+
+/* footer style */
+.footer {
+  width: 100%;
+  height: 5rem;
+  background-color: #0a183d;
+  /*following property used for footer to stay at the bottom  */
+  margin-top: auto;
+}
+.footer p {
+  color: #fff;
+  text-align: center;
+  line-height: 5rem;
+  
+}
+
 
 @media (max-width: 768px) {
   html {
     font-size: 55%;
   }
+
   .main_header {
     line-height: 5rem;
     text-align: center;
     padding: 0 2rem;
   }
+
   .main_header .navbar-nav {
     padding-left: 3rem;
   }
+
   .main_header .navbar-nav .nav-item .nav-link {
     padding-right: 0%;
   }
+
   .navbar .navbar-toggler {
     border-color: rgba(255, 255, 255, 0.5);
   }
+
   .header-hero_text .header-text_btn {
     display: block;
     margin: 0 auto;
   }
+
   .header-hero_text .header-text_btn a {
     display: block;
     text-align: center;
   }
+
   .header-hero_text .header-text_btn #btn__2 {
     margin-top: 2rem;
     margin-left: 0%;
   }
+
   .header-hero_img {
     display: none;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */

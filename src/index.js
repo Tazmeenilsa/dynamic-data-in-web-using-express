@@ -15,6 +15,7 @@ app.set("views",templatePath)
 // using partials,,-- require hbs above, store path in a variable
 hbs.registerPartials(partialsPath)
 
+app.use(express.static(staticPath))
 
 // template engine route
 app.get("/",(req,res)=>{
@@ -26,10 +27,21 @@ app.get("/about" ,(req,res)=>{
 res.render('about')
 })
 
-app.use(express.static(staticPath))
-app.get("/" , (req,res)=>{
-res.send("welcome")
+app.get("/about/*", (req,res)=>{
+    res.render("404",{
+        errorComment:"Opss this about page not found"
+    });
+    })
+
+// 404 page
+//universal symbol hmesha last m ho 
+app.get("*", (req,res)=>{
+res.render("404",{
+    errorComment:"Opss page not found"
+});
 })
+
+
 
 app.listen(8000,()=>{
     console.log("welcome to port 8000")
